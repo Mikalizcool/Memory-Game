@@ -3,31 +3,26 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const clickHandler = (event) => {
+  
+}
 function App() {
   const [count, setCount] = useState(0)
-
+  const boxes = [1, 2, 3, 4, 5];
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <div className="flex flex-row flex-wrap">
+          {boxes.map((box) => {
+            return (
+              <div key={box} className=" cursor-pointer m-4 border-solid border-4 w-80 h-80 border-black flex flex-wrap flex-row" onClick={clickHandler} >
+                {box}
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
     </>
   )
 }
