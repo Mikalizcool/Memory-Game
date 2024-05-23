@@ -34,7 +34,7 @@ function App() {
    
    const handleReset = () => {
     const shuffledImages = [...images];
-    shuffleArray(shuffledImages);
+    shuffledImages.reverse();
     setImages(shuffledImages.map(image => {
       return { ...image, clicked: false}
     }))
