@@ -33,7 +33,9 @@ function App() {
    }
    
    const handleReset = () => {
-    setImages(images.map(image => {
+    const shuffledImages = [...images];
+    shuffleArray(shuffledImages);
+    setImages(shuffledImages.map(image => {
       return { ...image, clicked: false}
     }))
    }
@@ -42,6 +44,7 @@ function App() {
       <p>{wins}</p>
       {images.map((image) => (
         <div key={image.id} className="block w-1/5 h-40 border-4" onClick={() => handleClick(image, image.id)}>
+          <h1>{image.id}</h1>
           <img src={imageList[image.id-1]}></img>
         </div>
       ))}
