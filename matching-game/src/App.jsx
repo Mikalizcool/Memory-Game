@@ -13,10 +13,14 @@ function App() {
  "https://placehold.co/600x400", "https://placehold.co/600x400", "https://placehold.co/600x400", "https://placehold.co/600x400", "https://placehold.co/600x400"
  ];
   
+ const handleClick = (image) => {
+  console.log("hi");
+ }
+ 
   return (
     <div className="flex flex-row flex-wrap">
       {images.map((image) => (
-        <div key={image.id} className="block w-1/5 h-40 border-4">
+        <div key={image.id} className="block w-1/5 h-40 border-4" onClick={() => handleClick(image)}>
           <img src={imageList[image.id-1]}></img>
         </div>
       ))}
