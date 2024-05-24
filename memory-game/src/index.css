@@ -37,20 +37,21 @@ html, body {
     font-size: 28px;
     margin-bottom: 10px;
 }
-.characterContainer img {
-    padding-bottom: 30px;
-}
 .character {
     width: 90%;
     height: auto;
     margin: auto;
     border-radius: 10px;
+    border-radius: 10px;
+}
+.name {
+    padding-top: 30px;
 }
 
 .title {
     font-size: 35px;
     color: #8ab661;
 }
-.dewcription {
+.description {
     color: #8ab661;
 }
