@@ -35,11 +35,15 @@ function App() {
    }
    
    useEffect(() => {
-    const shuffledImages = [...images];
-    shuffledImages.reverse();
+    const shuffledImages = JSON.parse(JSON.stringify(images));
+    shuffleArray(shuffledImages);
     setImages(shuffledImages);
-   }, [wins])
-   
+}, [wins]);
+
+function shuffleArray(array) {
+    array.sort(() => Math.random() - 0.5);
+}
+
    const handleDefeat = () => {
     const shuffledImages = [...images];
     shuffledImages.reverse();
