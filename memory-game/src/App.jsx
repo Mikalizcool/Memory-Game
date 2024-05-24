@@ -19,7 +19,7 @@ function App() {
   const handleClick = (image, id) => {
     if (image.clicked == true){
       setWins(0);
-      handleReset();
+      handleDefeat();
     }
     else {
       setWins(wins+1);
@@ -34,7 +34,13 @@ function App() {
     }
    }
    
-   const handleReset = () => {
+   useEffect(() => {
+    const shuffledImages = [...images];
+    shuffledImages.reverse();
+    setImages(shuffledImages);
+   }, [wins])
+   
+   const handleDefeat = () => {
     const shuffledImages = [...images];
     shuffledImages.reverse();
     setImages(shuffledImages.map(image => {
