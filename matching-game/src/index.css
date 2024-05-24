@@ -1,6 +1,7 @@
 * {
     font-family: "Poetsen One", sans-serif;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,10 +20,20 @@
     background-color: #8ab661;
     border-color: #8ab661;
     border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+}
+.characterContainer img {
+    padding-bottom: 30px;
 }
 .character {
     width: 90%;
     height: auto;
     margin: auto;
     border-radius: 10px;
+}
+
+.title {
+    font-size: 35px;
 }
