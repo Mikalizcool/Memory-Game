@@ -6,6 +6,7 @@ import Header from './Header'
 
 function App() {
   const [wins, setWins] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
   const [images, setImages] = useState([
     {id: 1, clicked: false, name: "Morty"}, {id: 2, clicked: false, name: "Rick"}, {id: 3, clicked: false, name: "Jerry"}, {id: 4, clicked: false, name: "Summer"}, {id: 5, clicked: false, name: "Beth"},
     {id: 6, clicked: false, name: "Jessica"}, {id: 7, clicked: false, name: "Birdperson"}, {id: 8, clicked: false, name: "Squanchy"}, {id: 9, clicked: false, name: "Miggs"}, {id: 10, clicked: false, name: "Ethan"},
@@ -23,6 +24,9 @@ function App() {
     }
     else {
       setWins(wins+1);
+      if (bestScore < wins+1){
+        setBestScore(wins+1);
+      }
       setImages(images.map(image => {
         if (image.id == id){
           return { ...image, clicked: true}
@@ -54,7 +58,7 @@ function shuffleArray(array) {
   return (
     <>
       <div className="app">
-        <Header wins={wins} />
+        <Header wins={wins} bestScore={bestScore}/>
         <div className="cardsContainer">
           {images.map((image) => (
             <div key={image.id} className="characterContainer" onClick={() => handleClick(image, image.id)}>
