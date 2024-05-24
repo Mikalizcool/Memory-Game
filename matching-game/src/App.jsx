@@ -50,7 +50,6 @@ function App() {
             <img className="character" src={imageList[image.id-1]}></img>
           </div>
         ))}
-        <p>{wins}</p>
       </div>
     </>
   )
