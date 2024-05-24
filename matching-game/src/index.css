@@ -4,13 +4,22 @@
 
 .cardsContainer {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .characterContainer {
-    display: flex;
     justify-content: center;
-    width: 400px;
-    border-width: 4px;
+    width: 280px;
+    height: 350px;
+    border-width: 8px;
     margin: 4px;
+    background-color: #8ab661;
+    border-color: #8ab661;
+    border-radius: 10px;
+}
+.character {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
 }
