@@ -1,3 +1,6 @@
+* {
+    font-family: "Poetsen One", sans-serif;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

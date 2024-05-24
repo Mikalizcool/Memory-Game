@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Header'
 
 function App() {
   const [wins, setWins] = useState(0);
@@ -41,15 +42,17 @@ function App() {
     }))
    }
   return (
-    <div className="cardsContainer">
-      
-      {images.map((image) => (
-        <div key={image.id} className="characterContainer" onClick={() => handleClick(image, image.id)}>
-          <img className="character" src={imageList[image.id-1]}></img>
-        </div>
-      ))}
-      <p>{wins}</p>
-    </div>
+    <>
+      <Header wins={wins} />
+      <div className="cardsContainer">
+        {images.map((image) => (
+          <div key={image.id} className="characterContainer" onClick={() => handleClick(image, image.id)}>
+            <img className="character" src={imageList[image.id-1]}></img>
+          </div>
+        ))}
+        <p>{wins}</p>
+      </div>
+    </>
   )
 }
 
