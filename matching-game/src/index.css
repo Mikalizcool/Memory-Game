@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cardsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.characterContainer {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    border-width: 4px;
+    margin: 4px;
+}
