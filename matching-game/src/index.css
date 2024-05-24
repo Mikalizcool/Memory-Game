@@ -1,6 +1,18 @@
 * {
     font-family: "Poetsen One", sans-serif;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+  
+#root {
+    height: 100%;
+}
+.app {
+    background: linear-gradient(0deg, rgba(133, 255, 0, 1) 0%, rgba(66, 135, 73, 1) 100%);
+    min-height: 100%;
+}
 
 @tailwind base;
 @tailwind components;

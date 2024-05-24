@@ -43,14 +43,16 @@ function App() {
    }
   return (
     <>
-      <Header wins={wins} />
-      <div className="cardsContainer">
-        {images.map((image) => (
-          <div key={image.id} className="characterContainer" onClick={() => handleClick(image, image.id)}>
-            <img className="character" src={imageList[image.id-1]}></img>
-            <p>{image.name}</p>
-          </div>
-        ))}
+      <div className="app">
+        <Header wins={wins} />
+        <div className="cardsContainer">
+          {images.map((image) => (
+            <div key={image.id} className="characterContainer" onClick={() => handleClick(image, image.id)}>
+              <img className="character" src={imageList[image.id-1]}></img>
+              <p>{image.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )
