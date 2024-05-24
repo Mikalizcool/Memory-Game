@@ -10,8 +10,9 @@ html, body {
     height: 100%;
 }
 .app {
-    background: linear-gradient(0deg, rgba(133, 255, 0, 1) 0%, rgba(66, 135, 73, 1) 100%);
+    background: linear-gradient(0deg, rgba(104, 190, 10, 1) 0%, rgba(66, 135, 73, 1) 100%);
     min-height: 100%;
+    padding: 10px;
 }
 
 @tailwind base;
@@ -28,13 +29,13 @@ html, body {
     width: 280px;
     height: 350px;
     border-width: 8px;
-    margin: 4px;
     background-color: #8ab661;
     border-color: #8ab661;
     border-radius: 10px;
     text-align: center;
     color: white;
     font-size: 28px;
+    margin-bottom: 10px;
 }
 .characterContainer img {
     padding-bottom: 30px;
@@ -48,4 +49,8 @@ html, body {
 
 .title {
     font-size: 35px;
+    color: #8ab661;
+}
+.dewcription {
+    color: #8ab661;
 }
