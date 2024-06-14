@@ -20,6 +20,7 @@ function App() {
         setBestScore(wins+1);
       }
       setImages(images.map(image => {
+        console.log(image.id, id);
         if (image.id == id){
           return { ...image, clicked: true}
         }
@@ -33,12 +34,12 @@ function App() {
    useEffect(() => {
     async function fetchImages() {
       try {
-        // Fetch images from the API
         const response = await fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,7,8,9,10,11,12,15');
-        // Convert the response to JSON
         const data = await response.json();
-        // Store the full character objects in the state
-        setImages(data);
+        const charactersClicked = data.map(character => ({ ...character, clicked: false }));
+        const shuffledImages = [...charactersClicked];
+        shuffleArray(shuffledImages);
+        setImages(shuffledImages);
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -46,10 +47,8 @@ function App() {
     
     fetchImages();
     
-    const shuffledImages = JSON.parse(JSON.stringify(images));
-    shuffleArray(shuffledImages);
-    setImages(shuffledImages);
-}, [wins]);
+    
+  }, [wins]);
 
   function shuffleArray(array) {
       array.sort(() => Math.random() - 0.5);
