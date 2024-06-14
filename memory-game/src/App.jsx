@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Header'
 
@@ -20,8 +18,7 @@ function App() {
         setBestScore(wins+1);
       }
       setImages(images.map(image => {
-        console.log(image.id, id);
-        if (image.id == id){
+        if (image.id === id){
           return { ...image, clicked: true}
         }
         else{
@@ -37,9 +34,9 @@ function App() {
         const response = await fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,7,8,9,10,11,12,15');
         const data = await response.json();
         const charactersClicked = data.map(character => ({ ...character, clicked: false }));
-        const shuffledImages = [...charactersClicked];
-        shuffleArray(shuffledImages);
-        setImages(shuffledImages);
+        //const shuffledImages = [...charactersClicked];
+        //shuffleArray(shuffledImages);
+        setImages(charactersClicked);
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -48,7 +45,13 @@ function App() {
     fetchImages();
     
     
-  }, [wins]);
+  }, []);
+
+    useEffect(() => {
+      const shuffledImages = [...images];
+      shuffleArray(shuffledImages);
+      setImages(shuffledImages);
+    },[wins])
 
   function shuffleArray(array) {
       array.sort(() => Math.random() - 0.5);
