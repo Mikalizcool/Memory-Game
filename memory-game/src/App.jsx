@@ -34,7 +34,7 @@ function App() {
     async function fetchImages() {
       try {
         // Fetch images from the API
-        const response = await fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8');
+        const response = await fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,10,11,12');
         // Convert the response to JSON
         const data = await response.json();
         // Store the full character objects in the state
