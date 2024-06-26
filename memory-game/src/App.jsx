@@ -29,7 +29,7 @@ function App() {
    }
    
    useEffect(() => {
-    async function fetchImages() {
+    const fetchImages = async () => {
       try {
         const response = await fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,7,8,9,10,11,12,15');
         const data = await response.json();
