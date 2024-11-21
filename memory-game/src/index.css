@@ -56,3 +56,24 @@ html, body {
 .description {
     color: #8ab661;
 }
+
+/* Mobile-specific styles */
+@media (max-width: 876px) {
+    .title {
+        text-align: center;
+    }
+    .description {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    .cardsContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .characterContainer {
+        margin-right: 10px;
+    }
+}
